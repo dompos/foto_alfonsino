@@ -19,6 +19,23 @@ class Service{
     }else{
       throw Exception('ERRORE');
     }
-  }
+  }//fetchImg
+
+  static Future<List<Utente>> fetchUtente() async{
+    final response = await http.get(
+      'http://jsonplaceholder.typicode.com/users'
+    );
+
+    if(response.statusCode == 200){
+      List<dynamic> list = json.decode(response.body);
+      List<Utente> usrList = new List();
+      for(var usr_list in list){
+        usrList.add(Utente.fromJson(usr_list));
+      }
+      return usrList;
+    }else{
+      throw Exception('ERRORE');
+    }
+  }//fetchUtente
 
 }
