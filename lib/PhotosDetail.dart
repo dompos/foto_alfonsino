@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PhotosDetail extends StatelessWidget{
-  var imgUrl, title;
+  final imgUrl, title;
 
 
   PhotosDetail(this.imgUrl, this.title);
