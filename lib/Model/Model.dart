@@ -81,3 +81,26 @@ class Company {
     );
   }
 }//Company
+
+class Post {
+  var userId, id, title, body;
+
+  Post({this.userId, this.id, this.title, this.body});
+
+  factory Post.fromJson(Map<String,dynamic> json){
+    return Post(
+      userId: json['userId'],
+      id: json['id'],
+      title: json['title'],
+      body: json['body'],
+    );
+  }
+}//Post
+
+class User {
+  Utente utente;
+  List<Post> post;
+
+  User({this.utente, this.post});
+
+}//User
