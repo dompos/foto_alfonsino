@@ -13,17 +13,6 @@ class Photos extends StatefulWidget{
 }
 
 class _PhotosState extends State<Photos>{
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index){
-    setState(() {
-      _selectedIndex = index;
-      if(index == 1){
-        
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,23 +56,6 @@ class _PhotosState extends State<Photos>{
           }
           return Center( child: CircularProgressIndicator());
         },
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.photo),
-            title: Text('Photos')
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.account_box),
-              title: Text('Users'),
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedItemColor: Color(0xfffabe00),
-        unselectedItemColor: Colors.white70,
-        backgroundColor: Color(0xff232426),
       ),
     );
   }
