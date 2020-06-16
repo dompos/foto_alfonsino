@@ -38,18 +38,44 @@ class _UsersDetailState extends State<UsersDetail>{
               padding: const EdgeInsets.all(8),
               itemCount: snapshot.data.length,
               itemBuilder: (BuildContext context, int index) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      'Post Id: ${snapshot.data[index].id}',
-                      style: TextStyle(color: Colors.white70),
-                    ),
-                    Text(
-                      'Title: ${snapshot.data[index].title}',
-                      style: TextStyle(color: Colors.white70),
-                    ),
-                  ],
+                return GestureDetector(
+                  onTap: () => {
+                    showModalBottomSheet<void>(
+                        context: context,
+                        builder: (BuildContext context){
+                          return Container(
+                            height: 300,
+                            color: Color(0xff18191A),
+                            child: Column(
+                              children: <Widget>[
+                                Text(
+                                  '${snapshot.data[index].title}',
+                                  style: TextStyle(color: Colors.white70),
+                                ),
+                                Text(
+                                  '${snapshot.data[index].body}',
+                                  style: TextStyle(color: Colors.white70),
+                                )
+                              ],
+                            ),
+                          );
+                        }
+                    )
+                    //Navigator
+                  },
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        'Post Id: ${snapshot.data[index].id}',
+                        style: TextStyle(color: Colors.white70),
+                      ),
+                      Text(
+                        'Title: ${snapshot.data[index].title}',
+                        style: TextStyle(color: Colors.white70),
+                      ),
+                    ],
+                  ),
                 );
               },
               separatorBuilder: (BuildContext context, int index) => const Divider(),

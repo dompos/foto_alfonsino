@@ -52,7 +52,7 @@ class _PhotosState extends State<Photos>{
               ],
             );
           }else if(snapshot.hasError){
-            return Text('ERRORE');
+            return Text(snapshot.error);
           }
           return Center( child: CircularProgressIndicator());
         },

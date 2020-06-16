@@ -59,7 +59,7 @@ class _UsersState extends State<Users>{
               separatorBuilder: (BuildContext context, int index) => const Divider(),
             );
           }else if(snapshot.hasError){
-            return Text('ERRORE FUTURE BUILDER');
+            return Text(snapshot.error);
           }
           return Center( child: CircularProgressIndicator());
         },
