@@ -36,9 +36,7 @@ class _UsersState extends State<Users>{
                     onTap: () => {
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => UsersDetail(
-                            post: snapshot.data[index].post,
-                          )
+                          MaterialPageRoute(builder: (context) => UsersDetail(snapshot.data[index].id)
                           )
                       )//Navigator
                     },//onTap,
@@ -46,11 +44,11 @@ class _UsersState extends State<Users>{
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          '${snapshot.data[index].utente.username}',
+                          '${snapshot.data[index].username}',
                           style: TextStyle(color: Colors.white70),
                         ),
                         Text(
-                          '${snapshot.data[index].utente.email}',
+                          '${snapshot.data[index].email}',
                           style: TextStyle(color: Colors.white70),
                         ),
                       ],

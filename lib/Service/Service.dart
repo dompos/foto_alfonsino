@@ -39,8 +39,8 @@ class Service{
   }//fetchUtente
 
   static Future<List<Post>> fetchPost({userId}) async{
-    var uriString = Uri.http('https://jsonplaceholder.typicode.com','/post',{
-      'userId': userId
+    var uriString = Uri.http('jsonplaceholder.typicode.com','/posts',{
+      'userId': userId.toString()
     });
     final responsePosts = await http.get(uriString);
     if(responsePosts.statusCode == 200){
