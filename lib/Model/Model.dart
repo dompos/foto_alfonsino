@@ -16,16 +16,16 @@ class Img {
 
 }//Img
 
-class Utente {
+class User {
   var id, name, username, email, phone, website;
   Address address;
   Company company;
 
-  Utente({this.id, this.name, this.username, this.email, this.phone,
+  User({this.id, this.name, this.username, this.email, this.phone,
       this.website, this.address, this.company});
 
-  factory Utente.fromJson(Map<String,dynamic> json){
-    return Utente(
+  factory User.fromJson(Map<String,dynamic> json){
+    return User(
       id:  json['id'],
       name: json['name'],
       username: json['username'],
@@ -97,10 +97,3 @@ class Post {
   }
 }//Post
 
-class User {
-  Utente utente;
-  List<Post> post;
-
-  User({this.utente, this.post});
-
-}//User
